@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>保存更新用户信息</title>
+</head>
+<body>
+<div th:replace="~{common/header::header}"></div>
+<h4 th:text="${userModel.title}">刘文庆</h4>
+<form action="/user" th:action="@{/user}" method="post" th:object="${userModel.user}">
+    <input type="hidden" name="id" th:value="*{id}">
+    名字<br/>
+    <input type="text" name="name" th:value="*{name}">
+    <br/>年龄<br/>
+    <input type="number" name="age" th:value="*{age}">
+    <br/>
+    <input type="submit" value="提交">
+</form>
+<div th:replace="~{common/footer::footer}"></div>
+</body>
+</html>
